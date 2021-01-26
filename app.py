@@ -1,7 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import os
+
+from werkzeug.utils import redirect
 
 app = Flask(__name__)
 
@@ -27,9 +29,26 @@ booksSchema = BookSchema(many=True)
 def hello_world():
     return render_template('index.html')
 
-@ app.route('/add-book')
+@ app.route('/add-book', methods=['GET', 'POST'])
 def add_book():
-    return render_template('add-book.html')
+    if request.method == "POST":
+        title = request.form.get('title')
+        author = request.form.get('author')
+        new_book = Book(title=title, author=author)
+
+        db.session.add(new_book)
+        db.session.commit()
+
+        return redirect('/books')
+    else:
+        return render_template('add-book.html')
+
+@app.route('/books', methods=['GET'])
+def get_books():
+    all_books = Book.query.all()
+    print(all_books)
+    return render_template("books.html", books=all_books)
+
 
 @ app.route('/looping')
 def looping():
