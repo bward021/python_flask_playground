@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+    {% if name %}
+    Hello {{name}}, How are you today?
+    {% else %}
+    Hello Guest, How are you today?
+    {% endif %}
+{% endblock %}
