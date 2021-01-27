@@ -1,0 +1,11 @@
+:root {
+    --black: #000000ff;
+    --alabaster: #f1f2ebff;
+    --timberwolf: #d8dad3ff;
+    --dark-red: #95190cff;
+    --green-pantone: #00af54ff;
+}
+
+body {
+    background-color: var(--timberwolf);
+}
