@@ -9,3 +9,14 @@
 body {
     background-color: var(--timberwolf);
 }
+
+.alert {
+    display: flex;
+    border-radius: 5px;
+    border: 2px solid black;
+    justify-content: center;
+}
+
+.alert-success {
+    background-color: var(--green-pantone);
+}

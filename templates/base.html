@@ -13,6 +13,17 @@
         <a href="/add-book">Add Book</a>
         <a href="/books">Books</a>
     </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">
+                  <h1>{{ message }}</h1>
+              </div>
+          {% endfor %}
+      {% endif %}
+    {% endwith %}
+
     {% block content %}{% endblock %}
 </body>
 </html>
