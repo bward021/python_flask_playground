@@ -46,7 +46,7 @@ def add_book():
 @app.route('/books', methods=['GET'])
 def get_books():
     all_books = Book.query.all()
-    print(all_books)
+        
     return render_template("books.html", books=all_books)
 
 

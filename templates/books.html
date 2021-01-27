@@ -7,4 +7,12 @@
     Books
 </h1>
 
+<ul>
+    {% for book in books %}
+    <li>
+        <b>Book:</b> {{book.title}}  <b>Author:</b> {{book.author}}
+    </li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
