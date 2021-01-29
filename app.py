@@ -52,6 +52,13 @@ def get_books():
         
     return render_template("books.html", books=all_books)
 
+@app.route('/book/<id>', methods=['GET'])
+def get_single_book(id):
+    book = Book.query.get(id)
+    print(id)
+    print(book)
+    return render_template('book.html', book = book)
+
 
 @ app.route('/looping')
 def looping():

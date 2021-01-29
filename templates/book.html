@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Single Book{% endblock %}
+
+
+{% block content %}
+
+{% if book %}
+    <h1>{{book.title}}</h1>
+    <h1>{{book.author}}</h1>
+{% else %}
+    <h1>No Book with that ID</h1>
+    <div>go back to the books collection to pick a different book</div>
+    <a href="/books">Books Collection</a>
+{% endif %}
+
+{% endblock %}

@@ -10,7 +10,7 @@
 <ul>
     {% for book in books %}
     <li>
-        <b>Book:</b> {{book.title}}  <b>Author:</b> {{book.author}}
+        <a href="/book/{{book.id}}"><b>Book:</b> {{book.title}}  <b>Author:</b> {{book.author}}</a>
     </li>
     {% endfor %}
 </ul>
