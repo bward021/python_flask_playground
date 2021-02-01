@@ -67,6 +67,23 @@ def delete_book(id):
     flash("Your book was deleted! :)", "danger")
     return redirect('/books')
 
+@app.route('/edit-book/<id>', methods=['GET', 'POST'])
+def edit_book(id):
+    if request.method == "POST":
+        book = Book.query.get(id)
+        title = request.form.get('title')
+        author = request.form.get('author')
+        book.title = title
+        book.author = author
+        flash('Book was Edited :)', 'info')
+        db.session.commit()
+        return redirect('/books')
+    else:
+        book = Book.query.get(id)
+        return render_template('edit-book.html', book=book)
+
+
+
 @ app.route('/looping')
 def looping():
     numbers = [1, 2, 3, 4, 5]

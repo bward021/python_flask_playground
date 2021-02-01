@@ -17,6 +17,10 @@ body {
     justify-content: center;
 }
 
+.alert-info {
+    background-color: skyblue;
+}
+
 .alert-success {
     background-color: var(--green-pantone);
 }
