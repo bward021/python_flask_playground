@@ -59,6 +59,13 @@ def get_single_book(id):
     print(book)
     return render_template('book.html', book = book)
 
+@app.route('/delete-book/<id>', methods=['POST'])
+def delete_book(id):
+    book = Book.query.get(id)
+    db.session.delete(book)
+    db.session.commit()
+    flash("Your book was deleted! :)", "danger")
+    return redirect('/books')
 
 @ app.route('/looping')
 def looping():

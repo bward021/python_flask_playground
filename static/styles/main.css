@@ -20,3 +20,38 @@ body {
 .alert-success {
     background-color: var(--green-pantone);
 }
+
+.alert-danger{
+    background-color: var(--dark-red);
+}
+
+.nav-bar {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    background-color: var(--black);
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.nav-bar-elements {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0px;
+    width: 50%;
+}
+
+.nav-bar-elements a {
+    text-decoration: none;
+    color: var(--timberwolf);
+    font-size: 20px;
+    position: relative;
+}
+
+.nav-bar-elements a:hover {
+    font-size: 25px;
+    color: grey;
+}
